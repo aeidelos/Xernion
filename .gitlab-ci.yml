@@ -1,0 +1,16 @@
+image: ubuntu
+
+variables:
+  PULL_LATEST: "rm -rf $APP_DIR && mkdir $APP_DIR && cd $APP_DIR && git init && git remote add origin $GIT_ORIGIN && git pull origin master"
+  DOCKER_COMPOSE_DOWN: "echo \"$SSH_PASSWORD\" | docker-compose down --rmi all"
+  DOCKER_COMPOSE_UP: "echo \"$SSH_PASSWORD\" | docker-compose up -d"
+
+before_script:
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+  - apt-get install sshpass -y
+
+deploy:
+  only:
+    - master
+  script:
+    - sshpass -p "$SSH_PASSWORD" ssh -v -o StrictHostKeyChecking=no dev@wlab.me "$PULL_LATEST && $DOCKER_COMPOSE_DOWN && $DOCKER_COMPOSE_UP"
