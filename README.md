@@ -1,9 +1,15 @@
 Xernion is nginx config inside docker originally to make reversing proxy for medium custom domain purpose,
 but you can change to your specified domain to!
 
+See my [example](http://wlab.me:9999)
+
 ### What this things can do
 - Making custom domain on medium for free :3, as you know we need to pay $75 for custom domain, this is my first intention to make this repo
 - Modify it and you can make your own proxy server!
+
+### Need to improved
+- XHR rejected :(
+- some link that refer to medium member and article, also image didnt load.
 
 ### Prerequisite
 - docker
