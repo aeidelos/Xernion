@@ -24,6 +24,8 @@ http://rizki.wlab.me
 
 just type ```docker-compose up```
 
+and by default this will run in port 9999
+
 ### Gitlab CI Config
 
 you need to specify these variable in gitlab environment variable
