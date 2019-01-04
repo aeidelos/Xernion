@@ -29,4 +29,6 @@ just type ```docker-compose up```
 you need to specify these variable in gitlab environment variable
 - APP_DIR = location of your app
 - GIT_ORIGIN = git url ssh access to your repository
+- SSH_HOST = server location
+- SSH_USER = your user to access ssh
 - SSH_PASSWORD = your user password to access ssh
